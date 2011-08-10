@@ -1,0 +1,98 @@
+<html>
+  <head>
+    <title>Literenderer Demo</title>
+    <script src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+    <script src="http://ajax.cdnjs.com/ajax/libs/underscore.js/1.1.4/underscore-min.js"></script>
+    <script src='literenderer.js'></script>
+    <script type="text/javascript">
+      var test_nodes = {'*':[
+        {h1: {
+          text: "Welcome to LiteRenderer"
+             }},
+        "Yet another template library",
+        {h2: {text: "Why?"}},
+        {p:  {
+              text: "There are many template libraries out there based on string concatenation",
+              '*':[
+                {ul:{
+                    '*': [
+                      {li:{text:'Few based on recursion'}},
+                      {li:{
+                        text: "Few support elegant event assignment",
+                        click: function() {
+                            alert("Like this");
+                        }
+                      }}
+                    ]
+                }}
+              ]
+            }},
+            {hr:{}},
+            {form: {
+              action: "http://www.google.com/search",
+              method: "get",
+              '*': [
+                {input:{name:'q'}},
+                {input:{type:'submit',value:'Search'}}
+              ]
+           }},
+           {script:{
+            type:"text/javascript",
+            '*':[
+                "$('body').append('script test')"
+            ]
+           }}
+      ]};
+      $(function() {
+        LiteRenderer.display(test_nodes,$("#somecontainer"));
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Literenderer Demo</h1>
+    <h2>More Complex Example</h2>
+    <pre>
+
+      var test_nodes = {'*':[
+        {h1: {
+          text: "Welcome to LiteRenderer"
+             }},
+        "Yet another template library",
+        {h2: {text: "Why?"}},
+        {p:  {
+              text: "There are many template libraries out there based on string concatenation",
+              '*':[
+                {ul:{
+                    '*': [
+                      {li:{text:'Few based on recursion'}},
+                      {li:{
+                        text: "Few support elegant event assignment",
+                        click: function() {
+                            alert("Like this");
+                        }
+                      }}
+                    ]
+                }}
+              ]
+            }},
+            {hr:{}},
+            {form: {
+              action: "http://www.google.com/search",
+              method: "get",
+              '*': [
+                {input:{name:'q'}},
+                {input:{type:'submit',value:'Search'}}
+              ]
+           }},
+           {script:{
+            type:"text/javascript",
+            '*':[
+                "$('body').append('script test')"
+            ]
+           }}
+      ]};
+    </pre>
+    <h2>More Complex Output</h2>
+    <div id='somecontainer'></div>
+  </body>
+</html>

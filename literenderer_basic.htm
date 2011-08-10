@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Literenderer Demo</title>
+    <script src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+    <script src="http://ajax.cdnjs.com/ajax/libs/underscore.js/1.1.4/underscore-min.js"></script>
+    <script src='literenderer.js'></script>
+    <script type="text/javascript">
+      var test_nodes = {'*':[
+        {h1: {
+          text: "Test"
+        }},
+        {p: {
+          '*': [
+            {ul:{
+              '*':[
+                {li: {text:"test",click:function() { alert('hello') }}}
+              ]
+            }}
+          ]
+        }}
+        ]};
+      $(function() {
+        LiteRenderer.display(test_nodes,$("#somecontainer"));
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Literenderer Demo</h1>
+    <h2>Basic Example</h2>
+    <pre>
+      var test_nodes = {'*':[
+        {h1: {
+          text: "Test"
+        }},
+        {p: {
+          '*': [
+            {ul:{
+              '*':[
+                {li: {text:"test",click:function() { alert('hello') }}}
+              ]
+            }}
+          ]
+        }}
+        ]};
+    </pre>
+    <h2>Basic Output</h2>
+    <div id='somecontainer'></div>
+  </body>
+</html>
